@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 CUSTOM_APPLICATION = [
-    # 'blog',
+    'blog.apps.BlogConfig'
 ]
 
 INSTALLED_APPS = [

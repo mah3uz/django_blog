@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog Home</title>
-</head>
-<body>
+{% extends "blog/_layouts/default.html" %}
 
-</body>
-</html>
+{% block content %}
+
+    <div class="home" id="home">
+      <h1 class="pageTitle">Recent Posts</h1>
+      <ul class="posts noList">
+        {% for post in posts %}
+          <li>
+            <span class="date">{{ post.post_date }}</span>
+            <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p>{{ post.content }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <!-- Pagination links -->
+    {#  <div class="pagination">#}
+    {#    {% if paginator.previous_page %}#}
+    {#      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">Newer Posts</a> #}
+    {#    {% endif %}#}
+    {#    {% if paginator.next_page %}#}
+    {#      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Older Posts</a>#}
+    {#    {% endif %}#}
+    {#  </div>#}
+    </div>
+
+{% endblock %}
