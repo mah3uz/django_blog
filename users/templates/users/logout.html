@@ -1,0 +1,12 @@
+    {% extends "blog/_layouts/default.html" %}
+    {% load crispy_forms_tags %}
+    {% block content %}
+        <h3 class="pageTitle">You have been Logged out</h3>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Thanks for spending some quality time with the Web site today.
+                <a href="{% url 'login' %}"> Log in again</a>
+            </small>
+        </div>
+
+    {% endblock %}

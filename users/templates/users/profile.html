@@ -1,0 +1,11 @@
+    {% extends "blog/_layouts/default.html" %}
+    {% load crispy_forms_tags %}
+    {% block content %}
+        <h1 class="pageTitle">Profile Page</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{{ user.username }}</h3>
+            </div>
+        </div>
+
+    {% endblock %}

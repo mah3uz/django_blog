@@ -1,20 +1,44 @@
  <div class="header">
      <div class="container">
-         <h1 class="logo"><a href="/">{{ site.title }}</a></h1>
+         <h1 class="logo"><a href="/">mah3uz</a></h1>
          <nav class="nav-collapse">
-             <ul class="noList">
-                 <li class="element">
-                     <a href="{% url 'blog-home' %}">Home</a>
-                 </li>
-                 <li class="element">
-                     <a href="{% url 'blog-about' %}">About</a>
-                 </li>
-                 <li class="element">
-                     <a href="#">Contact</a>
-                 </li>
-                 <li><a href="https://github.com/mah3uz" target="_blank">GitHub</a></li>
-                 <li><a href="https://twitter.com/mah3uz" target="_blank">Twitter</a></li>
-             </ul>
+             <div class="row">
+                 <div class="col-md-8 mr-auto">
+                     <ul class="noList">
+                         <li class="element">
+                             <a href="{% url 'blog-home' %}">Home</a>
+                         </li>
+                         <li class="element">
+                             <a href="{% url 'blog-about' %}">About</a>
+                         </li>
+                         <li class="element">
+                             <a href="#">Contact</a>
+                         </li>
+                         <li><a href="https://github.com/mah3uz" target="_blank">GitHub</a></li>
+                         <li><a href="https://twitter.com/mah3uz" target="_blank">Twitter</a></li>
+                     </ul>
+                 </div>
+
+                 <div class="col-md-4 text-right">
+                     <ul class="noList">
+                         {% if user.is_authenticated %}
+                             <li class="element">
+                                 <a href="{% url 'profile' %}">Profile</a>
+                             </li>
+                             <li class="element">
+                                 <a href="{% url 'logout' %}">Logout</a>
+                             </li>
+                         {% else %}
+                             <li class="element">
+                                 <a href="{% url 'register' %}">Register</a>
+                             </li>
+                             <li class="element">
+                                 <a href="{% url 'login' %}">Login</a>
+                             </li>
+                         {% endif %}
+                     </ul>
+                 </div>
+             </div>
          </nav>
      </div>
  </div><!-- end .header -->

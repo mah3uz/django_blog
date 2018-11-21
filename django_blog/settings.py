@@ -128,5 +128,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# Crispy Form Template
+# Crispy Form related settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Login related settings
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'blog-home'
