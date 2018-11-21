@@ -7,7 +7,7 @@
       <ul class="posts noList">
         {% for post in posts %}
           <li>
-            <span class="date">{{ post.post_date }}</span>
+            <span class="date">{{ post.created_at | date:'F d, Y'}}</span>
             <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
             <p>{{ post.content }}</p>
           </li>

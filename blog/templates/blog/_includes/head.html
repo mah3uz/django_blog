@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,7 @@
     {% endif %}
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ "/assets/img/favicon.ico" }}" />
+    <link rel="icon" type="image/x-icon" href="{% static '/assets/img/favicon.ico' %}" />
 
     <!-- Come and get me RSS readers -->
     <link rel="alternate" type="application/rss+xml" title="{{ title }}" href="{{ "/feed.xml" }}" />
