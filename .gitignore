@@ -328,3 +328,5 @@ rate_it/media/
 .env
 .envs/*
 !.envs/.local/
+
+*.sqlite3

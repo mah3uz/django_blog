@@ -29,8 +29,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-CUSTOM_APPLICATION = [
-    'blog.apps.BlogConfig'
+MY_APPLICATION = [
+    'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
+]
+
+THIRD_PART_APPS = [
+    'crispy_forms',
 ]
 
 INSTALLED_APPS = [
@@ -40,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + CUSTOM_APPLICATION
+] + MY_APPLICATION + THIRD_PART_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Crispy Form Template
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
