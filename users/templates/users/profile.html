@@ -1,12 +1,27 @@
     {% extends "blog/_layouts/default.html" %}
     {% load crispy_forms_tags %}
     {% block content %}
-        <h1 class="pageTitle">Profile Page</h1>
+        <h1 class="pageTitle">Profile Info</h1>
         <div class="row">
             <div class="col-md-12">
-                <img class="rounded-circle profile-img" src="{{ user.profile.image.url }}" alt="Profile Picture">
-                <h3>{{ user.username }}</h3>
-                <h3>{{ user.email }}</h3>
+                <div class="card text-center">
+                    <div class="profile-pic">
+                        <img class="rounded-circle profile-img" src="{{ user.profile.image.url }}" alt="Profile Picture">
+                    </div>
+                    <h4>{{ user.username }}</h4>
+                    <h4>{{ user.email }}</h4>
+                </div>
+            </div>
+
+            <div class="col-md-12 update-profile-form">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ u_form | crispy }}
+                        {{ p_form | crispy }}
+                    </fieldset>
+                    <input type="submit" value="Update" class="button">
+                </form>
             </div>
         </div>
 
