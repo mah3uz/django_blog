@@ -7,9 +7,10 @@
       <ul class="posts noList">
         {% for post in posts %}
           <li>
-            <img class="rounded-circle profile-img" src="{{ post.author.profile.image.url }}" alt="Author">
-            <span class="date">{{ post.created_at | date:'F d, Y'}}</span>
-            <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+            <img class="rounded-circle author-img" src="{{ post.author.profile.image.url }}" alt="Author">
+            <a class="" href="#"><span class="author">{{ post.author.username }}</span></a>
+            <span class="date">on {{ post.created_at | date:'F d, Y'}}</span>
+            <h3><a class="post-link" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
             <p>{{ post.content }}</p>
           </li>
         {% endfor %}

@@ -3,7 +3,7 @@
          <h1 class="logo"><a href="/">mah3uz</a></h1>
          <nav class="nav-collapse">
              <div class="row">
-                 <div class="col-md-8 mr-auto">
+                 <div class="col-md-7 mr-auto">
                      <ul class="noList">
                          <li class="element">
                              <a href="{% url 'blog-home' %}">Home</a>
@@ -19,9 +19,12 @@
                      </ul>
                  </div>
 
-                 <div class="col-md-4 text-right">
+                 <div class="col-md-5 text-right">
                      <ul class="noList">
                          {% if user.is_authenticated %}
+                             <li class="element">
+                                 <a href="{% url 'post-create' %}">New Post</a>
+                             </li>
                              <li class="element">
                                  <a href="{% url 'profile' %}">Profile</a>
                              </li>

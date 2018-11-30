@@ -1,0 +1,22 @@
+{% extends "blog/_layouts/default.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="post">
+        <div class="post-meta">
+            <h1 class="pageTitle">{{ object.title }}</h1>
+{#            <img src="{% static '/assets/img/touring.jpg' %}" alt="Touring">#}
+            <img class="rounded-circle author-img" src="{{ object.author.profile.image.url }}" alt="Author">
+            <a class="" href="#"><span class="author">{{ post.author.username }}</span></a>
+            <span class="date">on {{ post.created_at | date:'F d, Y'}}</span>
+            {% if object.author == user %}
+                <div>
+                    <a class="btn btn-secondary btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+                    <a class="btn btn-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+        <p>{{ object.content }}</p>
+    </div>
+
+{% endblock %}

@@ -290,7 +290,7 @@ blockquote {
     clear: both
 }
 
-.button, .button-secondary, .button-tertiary, .button__outline {
+.button, .button-secondary, .button-danger, .button-tertiary, .button__outline {
     background-color: #2e8b57;
     display: inline-block;
     position: relative;
@@ -314,12 +314,20 @@ blockquote {
     background-color: #21653f
 }
 
-.button-secondary:active, .button-tertiary:active, .button:active, .button__outline:active {
+.button-secondary:active, .button-danger:active, .button-tertiary:active, .button:active, .button__outline:active {
     top: 1px
 }
 
 .button-secondary {
     background-color: #233e5b
+}
+
+.button-danger {
+    background-color: #b70013
+}
+
+.button-danger:hover {
+    background-color: #d20419
 }
 
 .button-secondary:hover {
@@ -356,7 +364,7 @@ input[type=email], input[type=number], input[type=password], input[type=phone], 
     outline: none;
     border: none;
     height: 44px;
-    width: 300px;
+    /*width: 300px;*/
     margin-bottom: .5rem
 }
 
@@ -907,8 +915,14 @@ dd {
     text-decoration: underline
 }
 
-.posts li .date {
+.date {
     color: gray;
+    font-family: Open Sans, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: .8em
+}
+
+.author {
     font-family: Open Sans, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: .8em
@@ -1115,6 +1129,10 @@ dd {
     .profile-img {
         width: 200px;
         height: 200px;
+    }
+    .author-img {
+        width: 50px;
+        height: 50px;
     }
 
 
