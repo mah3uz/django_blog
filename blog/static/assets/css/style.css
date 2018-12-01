@@ -315,7 +315,7 @@ blockquote {
 }
 
 .button-secondary:active, .button-danger:active, .button-tertiary:active, .button:active, .button__outline:active {
-    top: 1px
+    /*top: 1px*/
 }
 
 .button-secondary {
@@ -885,11 +885,17 @@ dd {
 }
 
 .pagination .next {
-    float: left
+    float: left;
+    position: fixed;
+    left: 5px;
+    bottom: 0;
 }
 
 .pagination .previous {
-    float: right
+    float: right;
+    position: fixed;
+    right: 5px;
+    bottom: 0;
 }
 
 .posts li {
@@ -970,6 +976,10 @@ dd {
         width: 75%;
         float: none;
         margin: 0 auto 1.5em
+    }
+
+    .pagination {
+        display: block;
     }
 
     #home .pageTitle {
